@@ -1,0 +1,50 @@
+Windows Registry Editor Version 5.00
+
+;01. Смена языка по Ctrl+Shift
+;02. Темная тема оформления
+;03. Добавить значок Компьютер на рабочий стол
+;04. Открывать Компьютер при запуске проводника
+;05. Отключить показ недавних файлов
+;06. Исправить региональные настройки (точка как разделитель целой и дробной части)
+
+
+
+;01. Смена языка по Ctrl+Shift
+[HKEY_CURRENT_USER\Keyboard Layout\Toggle]
+"Hotkey"="2"
+"Language Hotkey"="2"
+"Layout Hotkey"="1"
+
+
+;02. Темная тема оформления
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+"AppsUseLightTheme"=dword:00000000
+
+
+;03. Добавить значок "Мой компьютер" на рабочий стол
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+ 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+
+
+;04. Открывать "Мой компьютер" при запуске проводника (вместо избранного)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LaunchTo"=dword:00000001
+
+
+;05. Отключить показ недавних файлов в проводнике
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
+
+
+;06. Исправить региональные настройки
+;Разделитель целой и дробной части = "."
+;Разделитель элементов списка = ","
+[HKEY_CURRENT_USER\Control Panel\International]
+"sList"=","
+"sDecimal"="."
+
+
